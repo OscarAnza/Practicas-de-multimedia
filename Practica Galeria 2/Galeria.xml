@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="8"?>
+<lugares>
+	<locacion>
+	<imagen>Bangkok.jpg</imagen>
+	<info continente = "asia">Info Bangkok</info>
+	</locacion>
+	<locacion>
+	<imagen>Brasil.jpg</imagen>
+	<info continente = "america">Info Brasil</info>
+	</locacion>
+	<locacion>
+	<imagen>Egypt.jpg</imagen>
+	<info continente = "africa">Info Egypt</info>
+	</locacion>
+	<locacion>
+	<imagen>London.jpg</imagen>
+	<info continente = "europa">Info London</info>
+	</locacion>
+	<locacion>
+	<imagen>Mexico.jpg</imagen>
+	<info continente = "america">Info Mexico</info>
+	</locacion>
+	<locacion>
+	<imagen>New_York.jpg</imagen>
+	<info continente = "america">Info New York</info>
+	</locacion>
+	<locacion>
+	<imagen>Paris.jpg</imagen>
+	<info continente = "europa">Info Paris</info>
+	</locacion>
+	<locacion>
+	<imagen>Rome.jpg</imagen>
+	<info continente = "europa">Info Rome</info>
+	</locacion>
+	<locacion>
+	<imagen>Venece.jpg</imagen>
+	<info continente = "europa">Info Venece</info>
+	</locacion>
+</lugares>
