@@ -32,6 +32,12 @@
 		//Funcion Inicial
 		public function Main() {
 			Conclusion();
+			var movl1:Tween = new Tween(linea1, "x", Bounce.easeOut, 570, 157.40, 2, true);
+			var movl2:Tween = new Tween(linea2, "x", Elastic.easeOut, 570, 162.75, 2, true);
+			var movl3:Tween = new Tween(linea3, "x", Bounce.easeOut, 570, 183.25, 2, true);
+			var movl4:Tween = new Tween(linea4, "x", Elastic.easeOut, 570, 200.30, 2, true);
+			var movl5:Tween = new Tween(logo_mc, "y", Elastic.easeOut, -100, 5.95, 2, true);
+			
 			aro.practicas.addEventListener(MouseEvent.CLICK, Anim1);
 			aro.juegos.addEventListener(MouseEvent.CLICK, Anim4);
 			aro.mediaa.addEventListener(MouseEvent.CLICK, Anim3);
@@ -92,6 +98,7 @@
 			
 			pan4.j1.addEventListener(MouseEvent.MOUSE_UP, J1);
 			pan4.j2.addEventListener(MouseEvent.MOUSE_UP, J2);
+			pan4.j3.addEventListener(MouseEvent.MOUSE_UP, J3);
 			
 			if(transicion == 0){
 				transicion = 1;
@@ -218,7 +225,7 @@
 			navigateToURL(urlDes, "self");
 		}
 		private function J3(event:MouseEvent){
-			urlDes = new URLRequest("\Juegos/Memorama.html");
+			urlDes = new URLRequest("\Juegos/Serpientes y Escaleras.html");
 			navigateToURL(urlDes, "self");
 		}
 		
@@ -427,7 +434,7 @@
 			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo1);
 			
 			extenderImagen2 = new Sprite();
-			extenderImagen2.graphics.beginFill(0x000000, .30);
+			extenderImagen2.graphics.beginFill(0xFFFFFF, .30);
 			extenderImagen2.graphics.drawRect(0, 0, 550, 400);
 			addChild(extenderImagen2);
 			
@@ -450,7 +457,7 @@
 			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo2);
 			
 			extenderImagen2 = new Sprite();
-			extenderImagen2.graphics.beginFill(0x000000, .30);
+			extenderImagen2.graphics.beginFill(0xFFFFFF, .30);
 			extenderImagen2.graphics.drawRect(0, 0, 550, 400);
 			addChild(extenderImagen2);
 			
@@ -464,7 +471,7 @@
 		//FUNCION CERRAR VIDEO
 		//ESPAÑOL
 		private function CerrarVideo1(event:MouseEvent){
-			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4")
+			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4");
 			
 			removeChild(extenderImagen2);
 			removeChild(botonCerrar2);
@@ -474,7 +481,7 @@
 		}
 		//INGLES
 		private function CerrarVideo2(event:MouseEvent){
-			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4")
+			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4");
 			
 			removeChild(extenderImagen2);
 			removeChild(botonCerrar2);
