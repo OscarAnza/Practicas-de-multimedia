@@ -444,13 +444,12 @@
 		}
 		
 		private function CerrarVideo(event:MouseEvent){
-			extenderImagen.removeChild(v);
+			v.closeMyFlv("\p10/Video10.mp4")
+			
 			removeChild(extenderImagen2);
 			removeChild(botonCerrar2);
 			boton1.visible = true;
 			boton2.visible = true;
-			
-			v.closeMyFlv("\p10/Video10.mp4");
 			
 			botonCerrar.addEventListener(MouseEvent.CLICK, CerrarVideos);
 		}

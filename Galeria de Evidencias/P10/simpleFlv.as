@@ -51,6 +51,12 @@
 			addChild(_playbackTime);
 		}
 		
+		public function closeMyFlv(mp4Url){
+			_stream.close();
+			removeChild(_video);
+			removeChild(_playbackTime);
+		}
+		
 		private function onMetaData(data:Object){
 			_duration = data.duration;
 		}

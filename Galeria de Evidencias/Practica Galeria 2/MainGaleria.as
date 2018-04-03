@@ -39,10 +39,32 @@
 		var imagenClickeada:DisplayObject;
 		//Imagen de Error para las imagenes no encontradas
 		var imagError:ImagError;
+		var mov:Tween;
+		var movE:Tween;
 		
 		//Portada
 		public function MainGaleria() {
+			mov = new Tween(linea1, "y", Regular.easeInOut,-100, 61.2, 5, true);
+			mov = new Tween(linea2, "y", Regular.easeInOut,-100, 215.6, 5, true);
+			mov = new Tween(linea3, "y", Regular.easeInOut,-100, 291.7, 5, true);
+			mov = new Tween(linea4, "y", Regular.easeInOut,-100, 367.7, 5, true);
+			mov = new Tween(logo_mc, "y", Regular.easeInOut,-180, 71.65, 5, true);
+			
+			mov = new Tween(caja1, "y", Strong.easeIn,-180, 473.05, 3, true);
+			mov = new Tween(caja2, "y", Strong.easeIn,-210, 389.15, 4, true);
+			mov = new Tween(caja3, "y", Strong.easeIn,-180, 473.40, 3, true);
+			movE = new Tween(caja4, "y", Strong.easeIn,-210, 389.15, 4, true);
+			movE.addEventListener(TweenEvent.MOTION_FINISH, Rota);
+			
 			entrar_btn.addEventListener(MouseEvent.CLICK, Inicio);
+		}
+		
+		private function Rota(event:TweenEvent){
+			movE = new Tween(caja4, "x", Strong.easeIn,caja4.x, 600, 2, true);
+			
+			movE = new Tween(caja4, "rotation", Strong.easeIn,0, 50, 4, true);
+			
+			mov = new Tween(caja4, "y", Strong.easeIn, caja4.y, 402.15, 4, true);
 		}
 		
 		//Inicio de la galeria
