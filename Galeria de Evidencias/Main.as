@@ -100,6 +100,7 @@
 			pan4.visible = true;
 			mov1.addEventListener(TweenEvent.MOTION_FINISH, BtnConclusion);
 		}
+		
 		//Ir al frame 4, Multimedia
 		private function GoMedia(event:TweenEvent){
 			mov2 = new Tween(fondo2, "x", Regular.easeOut, fondo2.x, 550, 2, true);
@@ -124,6 +125,7 @@
 			pan3.visible = true;
 			mov1.addEventListener(TweenEvent.MOTION_FINISH, BtnConclusion);
 		}
+		
 		//Ir al frmae 5, Tareas
 		private function GoTareas(event:TweenEvent){
 			mov2 = new Tween(fondo2, "x", Regular.easeOut, fondo2.x, -550, 2, true);
@@ -147,6 +149,7 @@
 			pan2.visible = true;
 			mov1.addEventListener(TweenEvent.MOTION_FINISH, BtnConclusion);
 		}
+		
 		//Ir al frame 6, Videos
 		private function GoVideos(event:MouseEvent){
 			aro.practicas.removeEventListener(MouseEvent.CLICK, Anim1);
@@ -258,6 +261,7 @@
 		}
 		
 		//ANIMACIONES
+		//PRACTICAS
 		private function Anim1(event:MouseEvent){
 			fondo2 = new Fondo2();
 			
@@ -274,11 +278,14 @@
 			r1.visible = false;
 			videos.visible = false;
 			
-			if(transicion == 1){
-				pan1.visible = false;
+			switch(frameActual){
+				case 2: pan1.visible = false; break;
+				case 3: pan4.visible = false; break;
+				case 4: pan3.visible = false; break;
+				case 5: pan2.visible = false; break;
 			}
 		}
-		
+		//TAREAS
 		private function Anim2(event:MouseEvent){
 			fondo2 = new Fondo2();
 			
@@ -295,11 +302,14 @@
 			r1.visible = false;
 			videos.visible = false;
 			
-			if(transicion == 1){
-				pan2.visible = false;
+			switch(frameActual){
+				case 2: pan1.visible = false; break;
+				case 3: pan4.visible = false; break;
+				case 4: pan3.visible = false; break;
+				case 5: pan2.visible = false; break;
 			}
 		}
-		
+		//MEDIA
 		private function Anim3(event:MouseEvent){
 			fondo2 = new Fondo2;
 			
@@ -316,11 +326,14 @@
 			r1.visible = false;
 			videos.visible = false;
 			
-			if(transicion == 1){
-				pan3.visible = false;
+			switch(frameActual){
+				case 2: pan1.visible = false; break;
+				case 3: pan4.visible = false; break;
+				case 4: pan3.visible = false; break;
+				case 5: pan2.visible = false; break;
 			}
 		}
-		
+		//JUEGOS
 		private function Anim4(event:MouseEvent){
 			fondo2 = new Fondo2();
 			
@@ -337,17 +350,22 @@
 			r1.visible = false;
 			videos.visible = false;
 			
-			if(transicion == 1){
-				pan4.visible = false;
+			switch(frameActual){
+				case 2: pan1.visible = false; break;
+				case 3: pan4.visible = false; break;
+				case 4: pan3.visible = false; break;
+				case 5: pan2.visible = false; break;
 			}
 		}
-		
+		//Ocultar boton conclusion
 		private function BtnConclusion(event:TweenEvent){
 			con.visible = true;
 			r1.visible = true;
 			videos.visible = true;
 		}
 		
+		//SECCION DE VIDEOS DE CONCLUSION
+		//Mostrar los botones de la seccion de videos, sin importar el frame
 		private function MostrarContenido(event:TweenEvent){
 			botonCerrar.x = 50;
 			botonCerrar.y = 100;
@@ -374,7 +392,7 @@
 			boton1.addEventListener(MouseEvent.CLICK, Español);
 			boton2.addEventListener(MouseEvent.CLICK, Ingles);
 		}
-		
+		//Funcion que esconde la seccion de videos
 		private function CerrarVideos(event:MouseEvent){
 			var movVideo2:Tween = new Tween(extenderImagen, "x", Regular.easeOut, extenderImagen.x, -500, 2, true);
 			removeChild(botonCerrar);
@@ -401,19 +419,19 @@
 			boton1.visible = false;
 			boton2.visible = false;
 			botonCerrar.visible = false;
-			var botonCerrar2:BotonCerrar = new BotonCerrar();
-			botonCerrar2.x = 500;
+			botonCerrar2 = new BotonCerrar();
+			botonCerrar2.x = 50;
 			botonCerrar2.y = 100;
 			botonCerrar2.scaleX = .75;
 			botonCerrar2.scaleY = .75;
-			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo);
+			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo1);
 			
 			extenderImagen2 = new Sprite();
 			extenderImagen2.graphics.beginFill(0x000000, .30);
 			extenderImagen2.graphics.drawRect(0, 0, 550, 400);
 			addChild(extenderImagen2);
 			
-			v.playMyFlv("\p10/Video10.mp4");
+			v.playMyFlv("\Conclusiones español/Conclusiones español.mp4");
 			v.x = -600;
 			v.y = -50;
 			extenderImagen.addChild(v);
@@ -425,33 +443,44 @@
 			boton2.visible = false;
 			botonCerrar.visible = false;
 			botonCerrar2 = new BotonCerrar();
-			botonCerrar2.x = 500;
+			botonCerrar2.x = 50;
 			botonCerrar2.y = 100;
 			botonCerrar2.scaleX = .75;
 			botonCerrar2.scaleY = .75;
-			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo);
+			botonCerrar2.addEventListener(MouseEvent.CLICK, CerrarVideo2);
 			
 			extenderImagen2 = new Sprite();
 			extenderImagen2.graphics.beginFill(0x000000, .30);
 			extenderImagen2.graphics.drawRect(0, 0, 550, 400);
 			addChild(extenderImagen2);
 			
-			v.playMyFlv("\p10/Video10.mp4");
+			v.playMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4");
 			v.x = -600;
 			v.y = -50;
 			extenderImagen.addChild(v);
 			addChild(botonCerrar2);
 		}
 		
-		private function CerrarVideo(event:MouseEvent){
-			v.closeMyFlv("\p10/Video10.mp4")
+		//FUNCION CERRAR VIDEO
+		//ESPAÑOL
+		private function CerrarVideo1(event:MouseEvent){
+			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4")
 			
 			removeChild(extenderImagen2);
 			removeChild(botonCerrar2);
+			botonCerrar.visible = true;
 			boton1.visible = true;
 			boton2.visible = true;
+		}
+		//INGLES
+		private function CerrarVideo2(event:MouseEvent){
+			v.closeMyFlv("\Conclusiones ingles/Conclusiones ingles.mp4")
 			
-			botonCerrar.addEventListener(MouseEvent.CLICK, CerrarVideos);
+			removeChild(extenderImagen2);
+			removeChild(botonCerrar2);
+			botonCerrar.visible = true;
+			boton1.visible = true;
+			boton2.visible = true;
 		}
 	}
 }
